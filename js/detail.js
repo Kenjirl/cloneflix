@@ -12,6 +12,9 @@ $(document).ready(function() {
                 title, overview, poster_path, release_date, runtime, status, vote_average, vote_count, genres, videos, similar, belongs_to_collection, production_companies, credits
             } = data;
 
+            // Title
+            document.title = `${title} | CloneFlix`;
+
             // Gambar utama
             $("#movieImage").attr("src", IMG_MOVIE_PATH + poster_path);
 

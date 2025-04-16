@@ -10,6 +10,8 @@ $(document).ready(function() {
         if (!query) return;
 
         $.getJSON(`${API_URL_SEARCH}${encodeURIComponent(query)}`, function (data) {
+            document.title = `${query} | CloneFlix`;
+
             $("#searchContainer").empty();
 
             if (data.results.length === 0) {
