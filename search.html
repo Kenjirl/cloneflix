@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5b8fa639bb.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-theme: #C68EFD;
+
+            --font-quicksand: "Quicksand", sans-serif;
+        }
+
+        a, button {
+            outline-color: #C68EFD;
+            cursor: pointer;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: black;
+            padding: 2px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #C68EFD;
+            border-radius: 10px;
+        }
+    </style>
+
+    <title>Pencarian | Cloneflix</title>
+</head>
+<body class="w-full min-h-screen bg-black text-white font-quicksand">
+    <header class="sticky top-0 left-0 w-full px-2 lg:px-8 py-2 flex items-center justify-between border-b border-transparent transition-colors duration-[400ms] z-10">
+        <!-- HAMBURG BTN -->
+        <div class="w-full lg:hidden">
+            <button class="w-fit px-2 aspect-square flex items-center justify-center rounded-sm" id="openNavBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="fixed top-0 right-full lg:relative lg:right-0 w-full h-screen lg:h-fit flex items-center justify-center bg-black lg:bg-transparent z-20 transition-all duration-[400ms]">
+            <ul class="w-full flex flex-col lg:flex-row items-center justify-normal gap-8">
+                <li><a href="./index.html">Movies</a></li>
+                <li><a href="./popular.html">Popular</a></li>
+                <li><a href="./top-rated.html">Top Rated</a></li>
+            </ul>
+
+            <button class="absolute top-4 left-4 w-fit px-2 aspect-square flex items-center justify-center lg:hidden rounded-sm" id="closeNavBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </nav>
+
+        <div class="w-full hidden lg:block text-center text-[2rem] font-bold">
+            <a href="./index.html">
+                CLONEFLIX
+            </a>
+        </div>
+
+        <div class="w-full flex items-center justify-end">
+            <form action="./search.html" method="GET">
+                <div class="w-fit px-4 py-2 flex items-center justify-center gap-4 border-2 border-white rounded-full text-sm has-[:focus]:border-theme has-[:focus]:bg-black">
+                    <input class="outline-none"
+                        type="text" name="query" id="search" placeholder="search">
+                    <button class="px-2 cursor-pointer" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section class="w-full min-h-screen p-2 md:p-8">
+        <div class="w-full mb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="searchContainer"></div>
+    </section>
+
+    <footer class="w-full border-t-2 border-theme">
+        <div class="w-full min-h-[200px] px-8 py-4 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-0">
+            <div class="w-full">
+                <div class="w-full md:pr-8 flex items-center justify-center">
+                    <a class="w-fit mx-auto inline" 
+                        href="./index.html">
+                        <img src="./img/logo.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full px-2 md:px-8 border-l border-theme">
+                <ul>
+                    <li class="mb-2"><a href="./index.html">Movies</a></li>
+                    <li class="mb-2"><a href="./popular.html">Popular</a></li>
+                    <li class="mb-2"><a href="./top-rated.html">Top Rated</a></li>
+                </ul>
+            </div>
+
+            <div class="w-full px-2 md:px-8 border-l border-theme">
+                <ul>
+                    <li class="mb-2"><a href="https://kenjirl.github.io" target="_blank">
+                        Kencong
+                    </a></li>
+                    <li class="mb-2"><a href="https://kencong.hashnode.dev" target="_blank">
+                        Blog
+                    </a></li>
+                    <li class="mb-2"><a href="https://drive.google.com/file/d/1_vJ8IRuzT1srct-tKH0yKAagEJLXV7qR/view?usp=sharing" target="_blank">
+                        CV
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="w-full"></div>
+        </div>
+
+        <div class="w-full p-4 border-t-[1px] border-white">
+            <p class="w-full text-center text-sm">Copyright &copy; 2025 - Kencong</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+</html>
